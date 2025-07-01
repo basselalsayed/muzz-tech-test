@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx server.ts",
+    "dev": "tsx server.dev.ts",
     "build": "tsc",
     "lint": "echo 'No lint script defined'"
   },
@@ -17,6 +17,7 @@
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
+    "chokidar": "^3.6.0",
     "tsx": "^4.20.3",
     "typescript": "~5.8.3"
   }
