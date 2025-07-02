@@ -1,0 +1,20 @@
+{
+  "name": "@muzz/scripts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "tsup-dts": "./tsup-dts.js"
+  },
+  "keywords": [],
+  "author": "@muzz",
+  "license": "ISC",
+  "description": "Reusable scripts for the Muzz monorepo.",
+  "dependencies": {
+    "tsup": "^8.5.0",
+    "yargs": "^18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3"
+  }
+}
