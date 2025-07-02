@@ -4,12 +4,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gen-types": "tsup-dts -i index.js -o types"
   },
   "keywords": [],
+  "types": "./types/index.d.ts",
   "author": "",
   "license": "ISC",
   "description": "Shared prettier config for @muzz monorepo",
+  "devDependencies": {
+    "@muzz/scripts": "workspace:^"
+  },
   "peerDependencies": {
     "prettier": "^3.4.2"
   },

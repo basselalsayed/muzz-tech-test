@@ -2,12 +2,14 @@
   "name": "@muzz",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "devDependencies": {
     "@muzz/prettier-config": "workspace:^",
+    "prettier": "^3.6.2",
     "turbo": "^1.13.0"
   },
   "scripts": {
