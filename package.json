@@ -1,11 +1,13 @@
 {
-  "name": "muzz-tech-test-monorepo",
+  "name": "@muzz",
   "private": true,
   "version": "1.0.0",
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "packages/*"
   ],
   "devDependencies": {
+    "@muzz/prettier-config": "workspace:^",
     "turbo": "^1.13.0"
   },
   "scripts": {

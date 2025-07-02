@@ -1,0 +1,11 @@
+- [x] Formatting
+- [ ] TSUP
+- [ ] Linting
+- [ ] LintStaged
+- [ ] Routing
+- [ ] tRPC
+- [ ] websocket impl
+- [ ] zod
+- [ ] UI Library sub package
+- [ ] ZOD Slices pattern
+- [ ] ts-pattern

@@ -1,0 +1,19 @@
+{
+  "name": "@muzz/prettier-config",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Shared prettier config for @muzz monorepo",
+  "peerDependencies": {
+    "prettier": "^3.4.2"
+  },
+  "dependencies": {
+    "prettier-plugin-tailwindcss": "^0.6.13"
+  }
+}
