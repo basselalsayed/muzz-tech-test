@@ -20,5 +20,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts", "eslint.config.js", "utils"]
+  "include": ["vite.config.ts", "eslint.config.js", "prettier.config.js", "utils"]
 }

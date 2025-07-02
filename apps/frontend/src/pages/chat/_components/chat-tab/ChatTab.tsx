@@ -1,10 +1,12 @@
-import { useState } from "react";
-import useMessagesStore from "../../../../store/messages.store.ts";
-import useUserStore from "../../../../store/user.store.ts";
-import MessageItem from "./_components/message/MessageItem.tsx";
+import { useState } from 'react';
+
+import useMessagesStore from '../../../../store/messages.store.ts';
+import useUserStore from '../../../../store/user.store.ts';
+
+import MessageItem from './_components/message/MessageItem.tsx';
 
 const ChatTab = () => {
-  const [currentMessage, setCurrentMessage] = useState("");
+  const [currentMessage, setCurrentMessage] = useState('');
   const currentUser = useUserStore((state) => state.currentUser);
   const currentRecipient = useUserStore((state) => state.currentRecipient);
   const messages = useMessagesStore((state) => state.messages);
@@ -14,34 +16,34 @@ const ChatTab = () => {
     if (!currentRecipient || !currentMessage.trim()) return;
 
     const newMessage = {
-      senderId: currentUser.id,
-      recipientId: currentRecipient.id,
       content: currentMessage.trim(),
+      recipientId: currentRecipient.id,
+      senderId: currentUser.id,
     };
 
-    setCurrentMessage("");
+    setCurrentMessage('');
   };
 
   return (
-    <div className="flex-1 flex flex-col">
-      <div className="flex-1 flex flex-col p-[5px] overflow-auto max-h-[490px]">
-        <div className="mt-auto">
+    <div className='flex flex-1 flex-col'>
+      <div className='flex max-h-[490px] flex-1 flex-col overflow-auto p-[5px]'>
+        <div className='mt-auto'>
           {messages.map((message) => (
             <div key={message.timestamp}>
-              <MessageItem
-                message={message}
-                key={message.id}
-              />
+              <MessageItem message={message} key={message.id} />
             </div>
           ))}
         </div>
       </div>
-      <div className="p-[20px] px-[10px]">
-        <form onSubmit={(e) => handleMessageSend(e)} className="flex gap-[10px]">
+      <div className='p-[20px] px-[10px]'>
+        <form
+          onSubmit={(e) => handleMessageSend(e)}
+          className='flex gap-[10px]'
+        >
           <input
-            type="text"
-            placeholder={`Message ${currentRecipient?.name || ""}`}
-            className="flex-1 rounded-full border-[8px] border-[#cfcfcf] px-[12px] py-[8px]"
+            type='text'
+            placeholder={`Message ${currentRecipient?.name || ''}`}
+            className='flex-1 rounded-full border-[8px] border-[#cfcfcf] px-[12px] py-[8px]'
             value={currentMessage}
             onChange={(e) => setCurrentMessage(e.target.value)}
           />

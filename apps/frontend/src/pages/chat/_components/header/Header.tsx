@@ -1,7 +1,8 @@
-import { ChevronLeft, Ellipsis } from "lucide-react";
-import UserCard from "../../../../components/user-card/UserCard.tsx";
-import usePageStore from "../../../../store/page.store.ts";
-import useUserStore from "../../../../store/user.store.ts";
+import { ChevronLeft, Ellipsis } from 'lucide-react';
+
+import UserCard from '../../../../components/user-card/UserCard.tsx';
+import usePageStore from '../../../../store/page.store.ts';
+import useUserStore from '../../../../store/user.store.ts';
 
 const Header = () => {
   const setCurrentPage = usePageStore((state) => state.setCurrentPage);
@@ -13,14 +14,14 @@ const Header = () => {
   }
 
   return (
-    <div className="flex justify-between p-[20px]">
+    <div className='flex justify-between p-[20px]'>
       <ChevronLeft
-        onClick={() => setCurrentPage("home")}
-        className="cursor-pointer"
+        onClick={() => setCurrentPage('home')}
+        className='cursor-pointer'
       />
       <UserCard user={currentRecipient} />
       {/* Doesn't need to do anything */}
-      <Ellipsis className="cursor-pointer" />
+      <Ellipsis className='cursor-pointer' />
     </div>
   );
 };

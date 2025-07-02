@@ -1,37 +1,37 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 export type Message = {
-  id: number;
-  senderId: number;
-  recipientId: number;
   content: string;
+  id: number;
+  recipientId: number;
+  senderId: number;
   timestamp: string;
 };
 
 export type MessageInput = {
-  senderId: number;
-  recipientId: number;
   content: string;
+  recipientId: number;
+  senderId: number;
 };
 
 type MessagesState = {
-  messages: Message[];
   createMessage: (message: MessageInput) => void;
+  messages: Message[];
 };
 
-const useMessagesStore = create<MessagesState>()((set, get) => ({
-  messages: [],
+const useMessagesStore = create<MessagesState>()((set) => ({
   createMessage: (message: MessageInput) =>
     set((state) => {
       const newMessage: Message = {
-        id: state.messages.length + 1,
-        senderId: message.senderId,
-        recipientId: message.recipientId,
         content: message.content,
+        id: state.messages.length + 1,
+        recipientId: message.recipientId,
+        senderId: message.senderId,
         timestamp: new Date().toISOString(),
       };
       return { messages: [...state.messages, newMessage] };
     }),
+  messages: [],
 }));
 
 export default useMessagesStore;

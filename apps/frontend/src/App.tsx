@@ -1,10 +1,11 @@
-import Container from "./components/container/Container.tsx";
-import Chat from "./pages/chat/Chat.tsx";
-import Home from "./pages/home/Home.tsx";
-import usePageStore from "./store/page.store.ts";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import "./App.css";
+import Container from './components/container/Container.tsx';
+import Chat from './pages/chat/Chat.tsx';
+import Home from './pages/home/Home.tsx';
+import usePageStore from './store/page.store.ts';
+
+import './App.css';
 
 function App() {
   const queryClient = new QueryClient();
@@ -13,8 +14,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Container>
-        {page === "home" && <Home />}
-        {page === "chat" && <Chat />}
+        {page === 'home' && <Home />}
+        {page === 'chat' && <Chat />}
       </Container>
     </QueryClientProvider>
   );

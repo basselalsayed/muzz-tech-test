@@ -1,23 +1,21 @@
 type ButtonProps = {
-  onClick?: (...args: any[]) => void;
+  buttonType?: 'submit' | 'reset' | 'button';
   children: string;
-  buttonType?: "submit" | "reset" | "button";
   disabled?: boolean;
+  onClick?: (...args: any[]) => void;
 };
 
-const Button = ({ onClick, children, buttonType, disabled }: ButtonProps) => {
-  return (
-    <button
-      type={buttonType}
-      className={`border-0 rounded-lg bg-[#e8506e] text-white px-2.5 py-1.5 font-semibold cursor-pointer transition-colors duration-200 ease-in-out hover:bg-[#cc3d59] ${
-        disabled ? "opacity-50 cursor-not-allowed hover:bg-[#e8506e]" : ""
-      }`}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {children}
-    </button>
-  );
-};
+const Button = ({ buttonType, children, disabled, onClick }: ButtonProps) => (
+  <button
+    type={buttonType}
+    className={`cursor-pointer rounded-lg border-0 bg-[#e8506e] px-2.5 py-1.5 font-semibold text-white transition-colors duration-200 ease-in-out hover:bg-[#cc3d59] ${
+      disabled ? 'cursor-not-allowed opacity-50 hover:bg-[#e8506e]' : ''
+    }`}
+    onClick={onClick}
+    disabled={disabled}
+  >
+    {children}
+  </button>
+);
 
 export default Button;

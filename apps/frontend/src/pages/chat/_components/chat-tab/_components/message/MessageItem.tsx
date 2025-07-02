@@ -1,15 +1,13 @@
-import type { Message } from "../../../../../../store/messages.store.ts";
+import type { Message } from '../../../../../../store/messages.store.ts';
 
 type MessageProps = {
   message: Message;
 };
 
-const MessageItem = ({ message }: MessageProps) => {
-  return (
-    <div className="rounded-lg px-[10px] py-[4px] text-sm bg-amber-50 m-[8px]">
-      {message.content}
-    </div>
-  );
-};
+const MessageItem = ({ message }: MessageProps) => (
+  <div className='m-[8px] rounded-lg bg-amber-50 px-[10px] py-[4px] text-sm'>
+    {message.content}
+  </div>
+);
 
 export default MessageItem;
