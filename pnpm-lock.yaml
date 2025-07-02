@@ -139,6 +139,22 @@ importers:
         specifier: ~5.8.3
         version: 5.8.3
 
+  packages/tsconfig:
+    dependencies:
+      '@tsconfig/node24':
+        specifier: ^24.0.1
+        version: 24.0.1
+      '@tsconfig/recommended':
+        specifier: ^1.0.10
+        version: 1.0.10
+      '@tsconfig/vite-react':
+        specifier: ^6.3.6
+        version: 6.3.6
+    devDependencies:
+      type-fest:
+        specifier: ^4.41.0
+        version: 4.41.0
+
 packages:
 
   '@ampproject/remapping@2.3.0':
@@ -679,6 +695,15 @@ packages:
     resolution: {integrity: sha512-lOf2KqRRiYWpQT86eeeftAGnjuTR35myTP8MXyvHa81VlomoAWNEd8x5vkcAfQefu0qtYCvyqLropFZqgI2EQw==}
     peerDependencies:
       react: ^18 || ^19
+
+  '@tsconfig/node24@24.0.1':
+    resolution: {integrity: sha512-3+IXshza3bIrT0tbHBr9CixQDVf4iBf0HTR0hCYowhpLqkzJjswu3UY8aZWjRXZep31kYB+o2SQeD8KwIoUHYw==}
+
+  '@tsconfig/recommended@1.0.10':
+    resolution: {integrity: sha512-cGvydvg03lONp5Z9yaplW493Vw9/um7k588mvDkm+VFPF2PZUVPx0uswq4PFpeEySsLbQRETrDRhzh4Dmxaslw==}
+
+  '@tsconfig/vite-react@6.3.6':
+    resolution: {integrity: sha512-kPqtkccClIWmj5+J2EmenOLAazBPGhjqPEmYGHsu8rpleZY4oSVu0xYvZJ/3QvBOBRxmpPjzoPzSLHMg9UtW7w==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -2132,6 +2157,10 @@ packages:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
 
+  type-fest@4.41.0:
+    resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
+    engines: {node: '>=16'}
+
   type-is@2.0.1:
     resolution: {integrity: sha512-OZs6gsjF4vMp32qrCbiVSkrFmXtG/AZhY3t0iAMrMBiAZyV9oALtXO8hsrHbMXF9x6L3grlFuwW2oAz7cav+Gw==}
     engines: {node: '>= 0.6'}
@@ -2740,6 +2769,12 @@ snapshots:
     dependencies:
       '@tanstack/query-core': 5.81.5
       react: 19.1.0
+
+  '@tsconfig/node24@24.0.1': {}
+
+  '@tsconfig/recommended@1.0.10': {}
+
+  '@tsconfig/vite-react@6.3.6': {}
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -4168,6 +4203,8 @@ snapshots:
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
+
+  type-fest@4.41.0: {}
 
   type-is@2.0.1:
     dependencies:

@@ -1,0 +1,30 @@
+{
+  "name": "@muzz/tsconfig",
+  "version": "1.0.0",
+  "description": "Shared TypeScript configs for Muzz projects.",
+  "main": "./node.json",
+  "type": "module",
+  "exports": {
+    "./node": "./node.json",
+    "./react": "./react.json"
+  },
+  "files": [
+    "node.json",
+    "react.json",
+    "README.md",
+    "index.d.ts"
+  ],
+  "peerDependencies": {
+    "@tsconfig/node24": "^24.0.1",
+    "@tsconfig/recommended": "^1.0.10",
+    "@tsconfig/vite-react": "^6.3.6"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "./index.d.ts",
+  "devDependencies": {
+    "type-fest": "^4.41.0"
+  }
+}

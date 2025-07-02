@@ -11,6 +11,7 @@ Changes I've made
    - Create a tsup-dts script that can be run as a binary
      - This allows for streamlined scaffolding of packages, as types can be generated from jsdoc or typescript without overhead of tsconfig.json or compilation workflow
      - Opted for `tsup` as it is a more lightweight alternative to typescript for small projects
+1. Create tsconfig package
 
 Changes I would make if I had more time:
 
