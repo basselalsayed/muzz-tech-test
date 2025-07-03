@@ -9,4 +9,4 @@
 - [ ] UI Library sub package
 - [ ] Zustand Slices pattern
 - [ ] ts-pattern
-- [ ] Generic query hook
+- [x] Generic query hook

@@ -15,6 +15,8 @@ Changes I've made
 1. Setup frontend linting using my own config
 1. Install and implement react router
    1. Implement a dynamic type-safe method of exposing routing calls while interpolating params
+1. Create a reusable useValidatedQuery hook
+   1. This uss zod to validate api responses, securing the contract between frontend and backend. Allows us to throw a generic error to the user rather than get a strange bug
 
 Changes I would make if I had more time:
 
