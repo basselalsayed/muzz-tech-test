@@ -3,17 +3,17 @@ type Tab<T extends string> = {
   label: string;
 };
 
-type TabsProps<T extends string> = {
+interface Props<T extends string> {
   activeTab: T;
   onTabChange: (tabId: T) => void;
   tabs: readonly Tab<T>[];
-};
+}
 
-const Tabs = <T extends string>({
+export const Tabs = <T extends string>({
   activeTab,
   onTabChange,
   tabs,
-}: TabsProps<T>) => (
+}: Props<T>) => (
   <ul className='flex shadow-[0_10px_10px_rgba(0,0,0,0.05)]'>
     {tabs.map((tab) => (
       <li
@@ -28,5 +28,3 @@ const Tabs = <T extends string>({
     ))}
   </ul>
 );
-
-export default Tabs;

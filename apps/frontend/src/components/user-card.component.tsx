@@ -1,6 +1,6 @@
-import type { User } from '../../store/user.store.ts';
+import type { TUser } from '@/data';
 
-const UserCard = ({ user }: { user: User }) => (
+export const UserCard: React.FC<{ user: TUser }> = ({ user }) => (
   <div className='flex items-center justify-center gap-2.5'>
     <img
       className='h-auto w-10 rounded-full'
@@ -10,5 +10,3 @@ const UserCard = ({ user }: { user: User }) => (
     <div className='font-semibold'>{user.name}</div>
   </div>
 );
-
-export default UserCard;
