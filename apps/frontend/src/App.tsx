@@ -1,21 +1,18 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { RouterProvider } from 'react-router/dom';
 
 import Container from './components/container/Container.tsx';
-import Chat from './pages/chat/Chat.tsx';
-import Home from './pages/home/Home.tsx';
-import usePageStore from './store/page.store.ts';
+import { router } from './router';
 
 import './App.css';
 
 function App() {
   const queryClient = new QueryClient();
-  const page = usePageStore((state) => state.currentPage);
 
   return (
     <QueryClientProvider client={queryClient}>
       <Container>
-        {page === 'home' && <Home />}
-        {page === 'chat' && <Chat />}
+        <RouterProvider router={router} />
       </Container>
     </QueryClientProvider>
   );

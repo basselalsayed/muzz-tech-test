@@ -13,9 +13,11 @@ Changes I've made
      - Opted for `tsup` as it is a more lightweight alternative to typescript for small projects
 1. Create tsconfig package
 1. Setup frontend linting using my own config
+1. Install and implement react router
+   1. Implement a dynamic type-safe method of exposing routing calls while interpolating params
 
 Changes I would make if I had more time:
 
 1. Move frontend to an SSR framework, tanstack start, remix etc.
-1. Created multiple eslint packages in the monorepo for use in different projects but this can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
+2. Created multiple eslint packages in the monorepo for use in different projects but this can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
    1. Migrated from prettier to eslint-stylistic

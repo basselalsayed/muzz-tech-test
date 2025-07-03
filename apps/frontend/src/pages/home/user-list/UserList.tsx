@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
+import { useNavigate } from 'react-router';
 
 import Button from '@/components/button/Button';
 import UserCard from '@/components/user-card/UserCard';
 
-import usePageStore from '@/store/page.store';
-import useUserStore, { type User } from '@/store/user.store';
+import { ROUTES } from '@/router';
+import useUserStore from '@/store/user.store';
 
 const UserList = () => {
   const currentUser = useUserStore((state) => state.currentUser);
@@ -12,7 +13,7 @@ const UserList = () => {
   const setCurrentRecipient = useUserStore(
     (state) => state.setCurrentRecipient
   );
-  const setCurrentPage = usePageStore((state) => state.setCurrentPage);
+  const navigate = useNavigate();
 
   const { data: users } = useQuery<User[]>({
     queryFn: async () => fetch('/api/user/all.json').then((res) => res.json()),
@@ -31,7 +32,7 @@ const UserList = () => {
     const user = users?.find((user) => user.id === userId);
     if (user) {
       setCurrentRecipient(user);
-      setCurrentPage('chat');
+      void navigate(ROUTES.chat({ userId }));
     }
   };
 

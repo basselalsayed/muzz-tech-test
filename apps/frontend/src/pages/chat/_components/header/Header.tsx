@@ -1,22 +1,23 @@
 import { ChevronLeft, Ellipsis } from 'lucide-react';
+import { useNavigate } from 'react-router';
 
-import UserCard from '../../../../components/user-card/UserCard.tsx';
-import usePageStore from '../../../../store/page.store.ts';
-import useUserStore from '../../../../store/user.store.ts';
+import UserCard from '@/components/user-card/UserCard';
+import { ROUTES } from '@/router';
+import useUserStore from '@/store/user.store';
 
 const Header = () => {
-  const setCurrentPage = usePageStore((state) => state.setCurrentPage);
+  const navigate = useNavigate();
   const currentRecipient = useUserStore((state) => state.currentRecipient);
   const currentUser = useUserStore((state) => state.currentUser);
 
   if (!currentRecipient || !currentUser) {
-    return null;
+    return;
   }
 
   return (
     <div className='flex justify-between p-[20px]'>
       <ChevronLeft
-        onClick={() => setCurrentPage('home')}
+        onClick={() => void navigate(ROUTES.home())}
         className='cursor-pointer'
       />
       <UserCard user={currentRecipient} />

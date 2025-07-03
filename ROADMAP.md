@@ -1,11 +1,12 @@
 - [x] Formatting
-- [ ] TSUP
-- [ ] Linting
+- [x] TSUP
+- [x] Linting
 - [ ] LintStaged
-- [ ] Routing
+- [x] Routing
 - [ ] tRPC
 - [ ] websocket impl
 - [ ] zod
 - [ ] UI Library sub package
-- [ ] ZOD Slices pattern
+- [ ] Zustand Slices pattern
 - [ ] ts-pattern
+- [ ] Generic query hook
