@@ -1,37 +1,29 @@
-import { useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router';
 
 import Button from '@/components/button/Button';
 import UserCard from '@/components/user-card/UserCard';
-
+import { useUsers } from '@/data/hooks';
 import { ROUTES } from '@/router';
 import useUserStore from '@/store/user.store';
 
 const UserList = () => {
   const currentUser = useUserStore((state) => state.currentUser);
   const setCurrentUser = useUserStore((state) => state.setCurrentUser);
-  const setCurrentRecipient = useUserStore(
-    (state) => state.setCurrentRecipient
-  );
+
   const navigate = useNavigate();
 
-  const { data: users } = useQuery<User[]>({
-    queryFn: async () => fetch('/api/user/all.json').then((res) => res.json()),
-    queryKey: ['users'],
-  });
+  const { data: users } = useUsers();
 
   const switchUser = (userId: number) => {
     const user = users?.find((user) => user.id === userId);
     if (user) {
       setCurrentUser(user);
-      setCurrentRecipient(undefined);
     }
   };
 
   const messageUser = (userId: number) => {
     const user = users?.find((user) => user.id === userId);
     if (user) {
-      setCurrentRecipient(user);
       void navigate(ROUTES.chat({ userId }));
     }
   };

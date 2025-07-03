@@ -1,14 +1,15 @@
 import { useState } from 'react';
 
-import useMessagesStore from '../../../../store/messages.store.ts';
-import useUserStore from '../../../../store/user.store.ts';
+import { useCurrentRecipient } from '@/hooks';
+import useMessagesStore from '@/store/messages.store.ts';
+import useUserStore from '@/store/user.store.ts';
 
 import MessageItem from './_components/message/MessageItem.tsx';
 
 const ChatTab = () => {
   const [currentMessage, setCurrentMessage] = useState('');
   const currentUser = useUserStore((state) => state.currentUser);
-  const currentRecipient = useUserStore((state) => state.currentRecipient);
+  const currentRecipient = useCurrentRecipient();
   const messages = useMessagesStore((state) => state.messages);
 
   const handleMessageSend = (e: React.FormEvent<HTMLFormElement>) => {

@@ -1,16 +1,10 @@
 import { create } from 'zustand';
 
-export type User = {
-  id: number;
-  name: string;
-  profile: string;
-};
+import type { TUser } from '@/data';
 
 type UserState = {
-  currentRecipient?: User;
-  currentUser: User;
-  setCurrentRecipient: (user?: User) => void;
-  setCurrentUser: (user: User) => void;
+  currentUser: TUser;
+  setCurrentUser: (user: TUser) => void;
 };
 
 const useUserStore = create<UserState>()((set) => ({
@@ -20,7 +14,6 @@ const useUserStore = create<UserState>()((set) => ({
     name: 'Alisha',
     profile: 'https://randomuser.me/api/portraits/women/89.jpg',
   },
-  setCurrentRecipient: (user) => set({ currentRecipient: user }),
   setCurrentUser: (user) => set({ currentUser: user }),
 }));
 

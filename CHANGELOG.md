@@ -17,9 +17,9 @@ Changes I've made
    1. Implement a dynamic type-safe method of exposing routing calls while interpolating params
 1. Create a reusable useValidatedQuery hook
    1. This uss zod to validate api responses, securing the contract between frontend and backend. Allows us to throw a generic error to the user rather than get a strange bug
-
-Changes I would make if I had more time:
+1. Use the generic query hook to make useUsers and useCurrentRecipient hooks, deprecating the need for currentRecipient in the users store
+1. Changes I would make if I had more time:
 
 1. Move frontend to an SSR framework, tanstack start, remix etc.
-2. Created multiple eslint packages in the monorepo for use in different projects but this can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
+1. Created multiple eslint packages in the monorepo for use in different projects but this can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
    1. Migrated from prettier to eslint-stylistic

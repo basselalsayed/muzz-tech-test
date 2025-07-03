@@ -1,8 +1,9 @@
+import { useCurrentRecipient } from '@/hooks';
+
 import UserCard from '../../../../components/user-card/UserCard.tsx';
-import useUserStore from '../../../../store/user.store.ts';
 
 const ProfileTab = () => {
-  const currentRecipient = useUserStore((state) => state.currentRecipient);
+  const currentRecipient = useCurrentRecipient();
 
   return (
     <div className='flex flex-col gap-4 py-7 text-center'>
