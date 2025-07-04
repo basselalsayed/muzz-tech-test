@@ -19,7 +19,7 @@ type MessagesState = {
   messages: Message[];
 };
 
-const useMessagesStore = create<MessagesState>()((set) => ({
+export const useMessagesStore = create<MessagesState>()((set) => ({
   createMessage: (message: MessageInput) =>
     set((state) => {
       const newMessage: Message = {
@@ -33,5 +33,3 @@ const useMessagesStore = create<MessagesState>()((set) => ({
     }),
   messages: [],
 }));
-
-export default useMessagesStore;

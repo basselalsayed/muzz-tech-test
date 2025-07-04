@@ -7,7 +7,7 @@ type UserState = {
   setCurrentUser: (user: TUser) => void;
 };
 
-const useUserStore = create<UserState>()((set) => ({
+export const useUserStore = create<UserState>()((set) => ({
   currentRecipient: undefined,
   currentUser: {
     id: 1,
@@ -16,5 +16,3 @@ const useUserStore = create<UserState>()((set) => ({
   },
   setCurrentUser: (user) => set({ currentUser: user }),
 }));
-
-export default useUserStore;

@@ -7,9 +7,7 @@ type PageState = {
   setCurrentPage: (page: Route) => void;
 };
 
-const usePageStore = create<PageState>((set) => ({
+export const usePageStore = create<PageState>((set) => ({
   currentPage: 'home',
   setCurrentPage: (page: Route) => set({ currentPage: page }),
 }));
-
-export default usePageStore;
