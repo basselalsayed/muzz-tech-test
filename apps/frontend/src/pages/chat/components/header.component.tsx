@@ -1,10 +1,10 @@
 import { ChevronLeft, Ellipsis } from 'lucide-react';
 import { useNavigate } from 'react-router';
 
-import UserCard from '@/components/user-card/UserCard';
+import { UserCard } from '@/components';
 import { useCurrentRecipient } from '@/hooks';
 import { ROUTES } from '@/router';
-import useUserStore from '@/store/user.store';
+import { useUserStore } from '@/store';
 
 const Header = () => {
   const navigate = useNavigate();

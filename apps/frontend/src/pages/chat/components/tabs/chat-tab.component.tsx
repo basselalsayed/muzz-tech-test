@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 import { useCurrentRecipient } from '@/hooks';
-import useMessagesStore from '@/store/messages.store.ts';
-import useUserStore from '@/store/user.store.ts';
+import { useMessagesStore, useUserStore } from '@/store';
 
-import MessageItem from './_components/message/MessageItem.tsx';
+import MessageItem from './components/message/message-item.component.tsx';
 
 const ChatTab = () => {
   const [currentMessage, setCurrentMessage] = useState('');

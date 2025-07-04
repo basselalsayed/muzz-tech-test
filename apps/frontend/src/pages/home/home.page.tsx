@@ -1,11 +1,12 @@
 import Logo from '@/assets/logo.svg';
-import UserCard from '@/components/user-card/UserCard.tsx';
-import useUserStore from '@/store/user.store.ts';
+import { UserCard } from '@/components';
+import { useUserStore } from '@/store';
 
-import UserList from './user-list/UserList.tsx';
+import UserList from './components/user-list.component.tsx';
 
-const Home = () => {
+export const Home = () => {
   const currentUser = useUserStore((state) => state.currentUser);
+
   return (
     <div className='flex h-full flex-col'>
       <div className='border-b border-gray-100 bg-gradient-to-b from-white to-gray-50 px-4 py-8 text-center'>
@@ -35,5 +36,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

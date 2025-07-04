@@ -1,10 +1,9 @@
 import { useNavigate } from 'react-router';
 
-import Button from '@/components/button/Button';
-import UserCard from '@/components/user-card/UserCard';
+import { Button, UserCard } from '@/components';
 import { useUsers } from '@/data/hooks';
 import { ROUTES } from '@/router';
-import useUserStore from '@/store/user.store';
+import { useUserStore } from '@/store';
 
 const UserList = () => {
   const currentUser = useUserStore((state) => state.currentUser);

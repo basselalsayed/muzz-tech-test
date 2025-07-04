@@ -1,6 +1,5 @@
+import { UserCard } from '@/components';
 import { useCurrentRecipient } from '@/hooks';
-
-import UserCard from '../../../../components/user-card/UserCard.tsx';
 
 const ProfileTab = () => {
   const currentRecipient = useCurrentRecipient();
