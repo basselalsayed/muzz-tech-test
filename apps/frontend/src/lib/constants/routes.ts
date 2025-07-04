@@ -1,5 +1,6 @@
 export const ROUTE_PATTERNS = {
   chat: '/chat/:userId',
+  chatProfile: '/chat/:userId/profile',
   home: '/',
 } as const;
 

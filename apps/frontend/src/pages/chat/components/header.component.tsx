@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 
 import { UserCard } from '@/components';
 import { useCurrentRecipient } from '@/hooks';
-import { ROUTES } from '@/router';
+import { ROUTES } from '@/lib';
 import { useUserStore } from '@/store';
 
 const Header = () => {

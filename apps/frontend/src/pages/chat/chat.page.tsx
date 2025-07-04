@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router';
 
 import { Tabs } from '@/components';
-import { ROUTES } from '@/router/routes';
+import { ROUTES } from '@/lib';
 
 import Header from './components/header.component.tsx';
 

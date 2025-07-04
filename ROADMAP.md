@@ -5,8 +5,9 @@
 - [x] Routing
 - [ ] tRPC
 - [ ] websocket impl
-- [ ] zod
+- [x] zod
 - [ ] UI Library sub package
 - [ ] Zustand Slices pattern
 - [ ] ts-pattern
 - [x] Generic query hook
+- [ ] Animations

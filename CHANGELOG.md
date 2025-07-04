@@ -19,10 +19,11 @@ Changes I've made
    1. This uss zod to validate api responses, securing the contract between frontend and backend. Allows us to throw a generic error to the user rather than get a strange bug
 1. Use the generic query hook to make useUsers and useCurrentRecipient hooks, deprecating the need for currentRecipient in the users store
 1. Directory & import cleanup
+1. Move QueryClient creation to outside of react render cycle as one one is needed per app instance
 
 Changes I would make if I had more time:
 
 1. Move frontend to an SSR framework, tanstack start, remix etc.
-1. Created multiple eslint packages in the monorepo for use in different projects but this can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
+2. Created multiple eslint packages in the monorepo for use in different projects but this can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
    1. Migrated from prettier to eslint-stylistic
-1. Authentication
+3. Authentication
