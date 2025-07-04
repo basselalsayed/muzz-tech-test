@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router';
+import { match } from 'ts-pattern';
 
 import { Tabs } from '@/components';
 import { ROUTES } from '@/lib';
@@ -26,11 +27,13 @@ export const Chat = () => {
     (tabId: TabId) => {
       if (!userId) return;
 
-      if (tabId === 'profile') {
-        void navigate(ROUTES.chatProfile({ userId: Number(userId) }));
-      } else {
-        void navigate(ROUTES.chat({ userId: Number(userId) }));
-      }
+      match(tabId)
+        .with('profile', () => {
+          void navigate(ROUTES.chatProfile({ userId: Number(userId) }));
+        })
+        .with('chat', () => {
+          void navigate(ROUTES.chat({ userId: Number(userId) }));
+        });
     },
     [userId, navigate]
   );
