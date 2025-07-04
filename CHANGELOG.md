@@ -21,6 +21,7 @@ Changes I've made
 1. Directory & import cleanup
 1. Move QueryClient creation to outside of react render cycle as one one is needed per app instance
 1. Install ts-pattern, a very powerful pattern matching library that brings rust/dart style language features to ts
+1. Setup lintstaged for precommit hooks
 
 Changes I would make if I had more time:
 

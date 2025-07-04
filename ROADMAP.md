@@ -1,7 +1,7 @@
 - [x] Formatting
 - [x] TSUP
 - [x] Linting
-- [ ] LintStaged
+- [x] LintStaged
 - [x] Routing
 - [ ] tRPC
 - [ ] websocket impl
