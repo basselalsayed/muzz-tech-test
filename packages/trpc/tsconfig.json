@@ -1,0 +1,4 @@
+{
+  "extends": "@muzz/tsconfig/node",
+  "include": ["src"]
+}
