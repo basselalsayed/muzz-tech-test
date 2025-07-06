@@ -1,8 +1,10 @@
+import { chatRouter } from './chat';
 import { createContext, router } from './trpc';
 import { usersRouter } from './users.router';
 import * as trpcExpress from '@trpc/server/adapters/express';
 
 export const appRouter = router({
+  chat: chatRouter,
   user: usersRouter,
 });
 

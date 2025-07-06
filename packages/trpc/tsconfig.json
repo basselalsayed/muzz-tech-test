@@ -1,4 +1,10 @@
 {
   "extends": "@muzz/tsconfig/node",
-  "include": ["src"]
+  "include": ["src"],
+  "compilerOptions": {
+    "types": ["node"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "baseUrl": "."
+  }
 }

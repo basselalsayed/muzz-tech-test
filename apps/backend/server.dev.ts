@@ -14,7 +14,7 @@ function startServer() {
 
 startServer();
 
-const watcher = chokidar.watch("./", {
+const watcher = chokidar.watch(["./", "../../packages/trpc"], {
   ignored: /node_modules|\.git/,
   persistent: true,
 });

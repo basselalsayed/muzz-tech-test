@@ -23,6 +23,8 @@ Changes I've made
 1. Install ts-pattern, a very powerful pattern matching library that brings rust/dart style language features to ts
 1. Setup lintstaged for precommit hooks
 1. create a cn function to better handle conditional tailwind classes
+1. tRPC backend complete
+   1. ws + event emitter for message push and user typing features
 
 Changes I would make if I had more time:
 
