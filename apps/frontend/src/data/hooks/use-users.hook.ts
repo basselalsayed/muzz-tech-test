@@ -1,4 +1,4 @@
-import { UserSchema } from '../schemas';
+import { UserSchema } from '../schemas/user.schema';
 
 import { useValidatedQuery } from './use-validated-query.hook';
 

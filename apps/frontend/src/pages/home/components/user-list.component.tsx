@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router';
 
 import { Button, UserCard } from '@/components';
-import { useUsers } from '@/data/hooks';
+import { useUsers } from '@/data';
 import { ROUTES } from '@/lib';
 import { useUserStore } from '@/store';
 
