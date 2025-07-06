@@ -1,12 +1,11 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from './app.component.tsx';
+import { queryClient } from './data/trpc.ts';
 
 import './index.css';
-
-const queryClient = new QueryClient();
 
 createRoot(document.querySelector('#root')!).render(
   <StrictMode>
