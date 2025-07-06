@@ -5,7 +5,6 @@ import { publicProcedure, router } from '../trpc';
 import { seedChat } from './seed';
 import { eventService, EventTypes } from './event-service';
 import { Message } from './schema';
-import { TRPCError } from '@trpc/server';
 
 const db = new Map<string, Message[]>();
 
@@ -48,8 +47,7 @@ export const chatRouter = router({
   getMessages: publicProcedure
     .input(z.object({ chatId: z.string() }))
     .query(({ input }) => {
-      return db.get(input.chatId) || [];
-      // return fakeDelay(db.get(input.chatId) || []);
+      return fakeDelay(db.get(input.chatId) || []);
     }),
   onMessage: publicProcedure
     .input(z.object({ chatId: z.string() }))

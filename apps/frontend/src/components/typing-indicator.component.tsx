@@ -11,7 +11,7 @@ export const TypingIndicator = ({
   isVisible,
   name,
 }: TypingIndicatorProps) => {
-  if (!isVisible) return;
+  if (!isVisible) return <div className='min-h-9' />;
 
   return (
     <div

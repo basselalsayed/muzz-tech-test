@@ -16,7 +16,7 @@ Changes I've made
 1. Install and implement react router
    1. Implement a dynamic type-safe method of exposing routing calls while interpolating params
 1. Create a reusable useValidatedQuery hook
-   1. This uss zod to validate api responses, securing the contract between frontend and backend. Allows us to throw a generic error to the user rather than get a strange bug
+   1. This uses zod to validate api responses, securing the contract between frontend and backend. Allows us to throw a generic error to the user rather than get a strange bug
 1. Use the generic query hook to make useUsers and useCurrentRecipient hooks, deprecating the need for currentRecipient in the users store
 1. Directory & import cleanup
 1. Move QueryClient creation to outside of react render cycle as one one is needed per app instance
@@ -31,6 +31,14 @@ Changes I've made
    1. Refactor MessageItem
    1. Move MessageSchema to trpc package and export schemas from there
    1. MessagesSkeleton for nice loading indicator
+   1. Chat feature complete
+      1. Various queries, subscriptions and mutations implemented with the backend
+      2. Chat websocket complete
+      3. Partner is typing websocket complete
+      4. Migrate to react-hook-form
+      5. Deprecate Messages store & page store
+      6. Add local storage to user store to allow the chat page to be refreshed
+      7. Install usehooks-ts for some useful hooks
 
 Changes I would make if I had more time:
 
@@ -43,5 +51,6 @@ Changes I would make if I had more time:
    2. Move page structures to CSS grid layouts
       1. Remove divs that are no longer necessary with grid
    3. Extract various css variables into the tailwind config, colours spacing border radius etc.
+      1. Replace HEX colours with HSL for compatibility with tailwind opacity classes
    4. Extract more components as necessary
    5. Responsive design - ensure [safe area](https://developer.mozilla.org/en-US/docs/Web/CSS/env) is used
