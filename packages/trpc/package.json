@@ -2,6 +2,10 @@
   "name": "@muzz/trpc",
   "version": "0.0.1",
   "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts"
+  },
   "types": "src/index.ts",
   "type": "module",
   "private": true,

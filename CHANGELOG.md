@@ -27,17 +27,20 @@ Changes I've made
    1. ws + event emitter for message push and user typing features
 1. Chat Frontend feature
    1. Base components: Typing indicator & Skeleton for loading
+   1. Messages component
+   1. Refactor MessageItem
+   1. Move MessageSchema to trpc package and export schemas from there
 
 Changes I would make if I had more time:
 
 1. Move frontend to an SSR framework, tanstack start, remix etc.
-1. Create a modular @muzz/eslint-config package. This can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
+2. Create a modular @muzz/eslint-config package. This can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
    1. Experimented with replacing prettier with eslint-stylistic
-1. Authentication
-1. JSX/css refactoring
+3. Authentication
+4. JSX/css refactoring
    1. Remove all direct usage of px, rem is better for responsive layout
-   1. Move page structures to CSS grid layouts
+   2. Move page structures to CSS grid layouts
       1. Remove divs that are no longer necessary with grid
-   1. Extract various css variables into the tailwind config, colours spacing border radius etc.
-   1. Extract more components as necessary
-   1. Responsive design - ensure [safe area](https://developer.mozilla.org/en-US/docs/Web/CSS/env) is used
+   3. Extract various css variables into the tailwind config, colours spacing border radius etc.
+   4. Extract more components as necessary
+   5. Responsive design - ensure [safe area](https://developer.mozilla.org/en-US/docs/Web/CSS/env) is used

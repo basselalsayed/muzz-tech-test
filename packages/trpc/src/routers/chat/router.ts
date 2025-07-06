@@ -5,10 +5,19 @@ import { publicProcedure, router } from '../trpc';
 import { seedChat } from './seed';
 import { eventService, EventTypes } from './event-service';
 import { Message } from './schema';
+import { TRPCError } from '@trpc/server';
 
 const db = new Map<string, Message[]>();
 
 seedChat(db);
+
+async function fakeDelay<T>(value: T): Promise<T> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(value);
+    }, 700);
+  });
+}
 
 export const chatRouter = router({
   postMessage: publicProcedure
@@ -40,6 +49,7 @@ export const chatRouter = router({
     .input(z.object({ chatId: z.string() }))
     .query(({ input }) => {
       return db.get(input.chatId) || [];
+      // return fakeDelay(db.get(input.chatId) || []);
     }),
   onMessage: publicProcedure
     .input(z.object({ chatId: z.string() }))
@@ -62,7 +72,12 @@ export const chatRouter = router({
       })
     )
     .mutation(({ input }) => {
-      eventService.emit(input.chatId, EventTypes.TYPING_STARTED, input.userId, input.chatId);
+      eventService.emit(
+        input.chatId,
+        EventTypes.TYPING_STARTED,
+        input.userId,
+        input.chatId
+      );
       return { success: true };
     }),
   stopTyping: publicProcedure
@@ -73,7 +88,12 @@ export const chatRouter = router({
       })
     )
     .mutation(({ input }) => {
-      eventService.emit(input.chatId, EventTypes.TYPING_STOPPED, input.userId, input.chatId);
+      eventService.emit(
+        input.chatId,
+        EventTypes.TYPING_STOPPED,
+        input.userId,
+        input.chatId
+      );
       return { success: true };
     }),
   onTypingStarted: publicProcedure
