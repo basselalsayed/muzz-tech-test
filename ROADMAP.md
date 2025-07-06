@@ -3,8 +3,8 @@
 - [x] Linting
 - [x] LintStaged
 - [x] Routing
-- [ ] tRPC
-- [ ] websocket impl
+- [x] tRPC
+- [x] websocket impl
 - [x] zod
 - [ ] UI Library sub package
 - [ ] Zustand Slices pattern

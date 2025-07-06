@@ -25,10 +25,19 @@ Changes I've made
 1. create a cn function to better handle conditional tailwind classes
 1. tRPC backend complete
    1. ws + event emitter for message push and user typing features
+1. Chat Frontend feature
+   1. Base components: Typing indicator & Skeleton for loading
 
 Changes I would make if I had more time:
 
 1. Move frontend to an SSR framework, tanstack start, remix etc.
-2. Created multiple eslint packages in the monorepo for use in different projects but this can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
-   1. Migrated from prettier to eslint-stylistic
-3. Authentication
+1. Create a modular @muzz/eslint-config package. This can be a little fiddly due to tsconfig resolving, so I've skipped for velocity.
+   1. Experimented with replacing prettier with eslint-stylistic
+1. Authentication
+1. JSX/css refactoring
+   1. Remove all direct usage of px, rem is better for responsive layout
+   1. Move page structures to CSS grid layouts
+      1. Remove divs that are no longer necessary with grid
+   1. Extract various css variables into the tailwind config, colours spacing border radius etc.
+   1. Extract more components as necessary
+   1. Responsive design - ensure [safe area](https://developer.mozilla.org/en-US/docs/Web/CSS/env) is used
