@@ -30,6 +30,7 @@ Changes I've made
    1. Messages component
    1. Refactor MessageItem
    1. Move MessageSchema to trpc package and export schemas from there
+   1. MessagesSkeleton for nice loading indicator
 
 Changes I would make if I had more time:
 
