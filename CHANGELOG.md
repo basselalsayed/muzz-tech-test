@@ -39,6 +39,7 @@ Changes I've made
       5. Deprecate Messages store & page store
       6. Add local storage to user store to allow the chat page to be refreshed
       7. Install usehooks-ts for some useful hooks
+1. Install and setup playwright
 
 Changes I would make if I had more time:
 

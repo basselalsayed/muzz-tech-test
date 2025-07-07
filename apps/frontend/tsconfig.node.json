@@ -1,18 +1,18 @@
 {
   "extends": "@muzz/tsconfig/node",
   "compilerOptions": {
+    "allowJs": true,
     "target": "ES2022",
     "lib": ["ES2023"],
+    "types": ["node"],
     "module": "ESNext",
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -20,5 +20,12 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts", "eslint.config.js", "prettier.config.js", "utils"]
+  "include": [
+    "vite.config.ts",
+    "eslint.config.js",
+    "prettier.config.js",
+    "utils",
+    "e2e",
+    "playwright.config.ts"
+  ]
 }
