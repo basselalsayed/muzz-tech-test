@@ -1,6 +1,11 @@
 {
   "name": "@muzz/tsconfig",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.12.4",
   "description": "Shared TypeScript configs for Muzz projects.",
   "main": "./node.json",
   "type": "module",
