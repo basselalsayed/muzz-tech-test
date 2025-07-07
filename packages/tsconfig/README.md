@@ -16,7 +16,7 @@ In your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@muzz/tsconfig/node.json"
+  "extends": "@muzz/tsconfig/node"
 }
 ```
 
@@ -26,6 +26,6 @@ In your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@muzz/tsconfig/react.json"
+  "extends": "@muzz/tsconfig/react"
 }
 ```

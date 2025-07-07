@@ -16,7 +16,7 @@ import { config, configs } from 'typescript-eslint';
 import { DIRECTORIES } from './utils/constants.js';
 
 export default config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', '.lintstagedrc.json'] },
   {
     extends: [
       js.configs.recommended,

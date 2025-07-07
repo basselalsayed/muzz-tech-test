@@ -1,111 +1,156 @@
 # 🧪 Muzz Frontend Engineering Test
 
-Welcome to the Muzz Frontend Engineering Test! This is a chat application built with modern web technologies, simulating a real-world codebase. We've provided a starting point with both frontend and backend implementations to help you get started quickly.
-
-Your task is to take ownership of this project, refactor and improve the code, fix issues, and implement new features — just like a lead engineer would when inheriting an existing app.
-
-Most of your time will be spent working in the `frontend/src/pages/chat` directory, which contains the core chat functionality of the application. This includes the chat interface, message handling, and user interactions.
+📝 **See [CHANGELOG.md](./CHANGELOG.md) for documentation of changes and thought process during development.**
 
 ## 📋 Prerequisites
 
-- Node.js (v18+ recommended)
-- npm (v9+)
+- Node.js (24)
+- pnpm (v10) - [Install pnpm](https://pnpm.io/installation)
 
 ## 🚀 Getting Started
 
 1. **Clone the repository**
+
    ```bash
-   git clone git@github.com:muzzapp/web-lead-tech-test.git
-   cd muzz-exercise
+   git clone https://github.com/basselalsayed/muzz-tech-test.git
+   cd muzz-tech-test
    ```
 
 2. **Install dependencies**
-   ```bash
-   # Install frontend dependencies
-   cd frontend
-   npm install
 
-   # Install backend dependencies
-   cd ../backend
-   npm install
-   cd ..
+   ```bash
+   # Install all dependencies using pnpm
+   pnpm install
    ```
 
 3. **Start the development servers**
    ```bash
-   # Start backend server (from backend directory)
-   cd backend
-   npm run dev
-
-   # Start frontend server (from frontend directory)
-   cd frontend
-   npm run dev
+   # Start all development servers using Turbo
+   turbo dev
    ```
+
+## 🧪 Running Tests
+
+To run tests, you'll need two terminal windows:
+
+**Terminal 1 - Start the development servers:**
+
+```bash
+turbo dev
+```
+
+**Terminal 2 - Run tests:**
+
+```bash
+turbo test
+```
 
 ## 📁 Project Structure
 
 ```
 .
-├── frontend/                        # Frontend application
-│   ├── src/
-│   │   ├── assets/                 # Static assets like images and hardcoded api
-│   │   ├── components/             # Reusable UI components
-│   │   │   ├── button/
-│   │   │   ├── container/    
-│   │   │   ├── tabs/            
-│   │   │   └── user-card/    
-│   │   ├── pages/                  # Page components
-│   │   │   ├── chat/              # Chat functionality
-│   │   │   │   ├── _components/   # Chat-specific components
-│   │   │   │   │   ├── chat-tab/  # Main chat interface
-│   │   │   │   │   │   └── _components/
-│   │   │   │   │   │       └── message/  # Message components
-│   │   │   │   │   ├── header/    # Chat header
-│   │   │   │   │   ├── profile-tab/ # User profile - Changes not needed
-│   │   │   │   │   └── tabs/      # Chat navigation
-│   │   │   │   └── Chat.tsx       # Main chat page
-│   │   │   └── home/              # Home page with user selection
-│   │   ├── store/                 # State management
-│   │   │   ├── messages.store.ts  # Message state
-│   │   │   ├── page.store.ts      # Page navigation state
-│   │   │   └── user.store.ts      # User state
-│   │   └── App.tsx                # Root component
-│   └── package.json
+├── apps/
+│   ├── frontend/                    # Frontend application
+│   │   ├── src/
+│   │   │   ├── assets/             # Static assets and images
+│   │   │   ├── components/         # Reusable UI components
+│   │   │   │   ├── ui/             # UI component library
+│   │   │   │   │   ├── button.component.tsx
+│   │   │   │   │   ├── skeleton.component.tsx
+│   │   │   │   │   └── tabs.component.tsx
+│   │   │   │   ├── layout.component.tsx
+│   │   │   │   ├── typing-indicator.component.tsx
+│   │   │   │   └── user-card.component.tsx
+│   │   │   ├── data/               # Data layer and API
+│   │   │   │   ├── hooks/          # Data fetching hooks
+│   │   │   │   ├── schemas/        # Data validation schemas
+│   │   │   │   └── trpc.ts         # tRPC client configuration
+│   │   │   ├── hooks/              # Custom React hooks
+│   │   │   │   ├── use-current-recipient.hook.ts
+│   │   │   │   └── use-typing.hook.ts
+│   │   │   ├── lib/                # Utilities and constants
+│   │   │   │   ├── constants/      # App constants
+│   │   │   │   └── utils.ts        # Utility functions
+│   │   │   ├── pages/              # Page components
+│   │   │   │   ├── chat/           # Chat functionality
+│   │   │   │   │   ├── components/ # Chat-specific components
+│   │   │   │   │   │   ├── header.component.tsx
+│   │   │   │   │   │   └── tabs/   # Chat tabs
+│   │   │   │   │   │       ├── chat-tab.component.tsx
+│   │   │   │   │   │       ├── profile-tab.tsx
+│   │   │   │   │   │       └── components/
+│   │   │   │   │   │           ├── message-item.component.tsx
+│   │   │   │   │   │           ├── messages.component.tsx
+│   │   │   │   │   │           └── messages-skeleton.component.tsx
+│   │   │   │   │   └── chat.page.tsx
+│   │   │   │   └── home/           # Home page
+│   │   │   │       ├── components/
+│   │   │   │       │   └── user-list.component.tsx
+│   │   │   │       └── home.page.tsx
+│   │   │   ├── store/              # State management
+│   │   │   │   └── user.store.ts   # User state
+│   │   │   ├── app.component.tsx   # Root component
+│   │   │   ├── router.tsx          # App routing
+│   │   │   └── main.tsx            # App entry point
+│   │   ├── e2e/                    # End-to-end tests
+│   │   ├── public/                 # Public assets
+│   │   ├── utils/                  # Build utilities
+│   │   └── package.json
+│   │
+│   └── backend/                     # Backend application
+│       ├── server.ts               # Server entry point
+│       ├── server.dev.ts           # Development server
+│       └── package.json
 │
-└── backend/                        # Backend application
-    ├── src/
-    │   ├── controllers/           # Request handlers
-    │   ├── models/               # Data models
-    │   ├── routes/              # API routes
-    │   └── server.ts            # Server entry point
-    └── package.json
+└── packages/                        # Shared packages
+    ├── trpc/                       # tRPC configuration
+    │   └── src/
+    │       ├── routers/            # API routes
+    │       │   ├── chat/           # Chat API
+    │       │   │   ├── router.ts
+    │       │   │   ├── event-service.ts
+    │       │   │   ├── schema.ts
+    │       │   │   └── seed.ts
+    │       │   ├── users.router.ts
+    │       │   └── index.ts
+    │       ├── schema.ts
+    │       └── index.ts
+    ├── tsconfig/                   # TypeScript configurations
+    ├── prettier/                   # Prettier configuration
+    └── scripts/                    # Build scripts
 ```
 
 ### Backend Starter
 
 We've included a basic backend starter to save you time, but feel free to:
+
 - Use your own backend implementation
 - Modify the existing backend
 - Use a different technology stack
 - Implement any additional features
 
-The current backend is a simple Express.js server with basic user and message endpoints. You can find it in the `backend` directory.
+The current backend is a simple Express.js server with basic user and message endpoints. You can find it in the `apps/backend` directory.
 
 ### Key Frontend Directories
 
-- **`frontend/src/pages/chat`**: Contains the main chat functionality
-  - `_components/chat-tab`: Handles message display and input
-  - `_components/message`: Individual message components
-  - `_components/header`: Chat header with navigation
-  - `_components/profile-tab`: User profile information
+- **`apps/frontend/src/pages/chat`**: Contains the main chat functionality
+  - `components/tabs/chat-tab.component.tsx`: Main chat interface
+  - `components/tabs/components/`: Message components
+  - `components/header.component.tsx`: Chat header with navigation
 
-- **`frontend/src/store`**: State management
-  - `messages.store.ts`: Manages chat messages
+- **`apps/frontend/src/data`**: Data layer and API integration
+  - `hooks/`: Data fetching hooks
+  - `schemas/`: Data validation schemas
+  - `trpc.ts`: tRPC client configuration
+
+- **`apps/frontend/src/hooks`**: Custom React hooks
+  - `use-typing.hook.ts`: Typing indicator logic
+  - `use-current-recipient.hook.ts`: Current user management
+
+- **`apps/frontend/src/store`**: State management
   - `user.store.ts`: Handles user data and authentication
-  - `page.store.ts`: Controls page navigation
 
-- **`frontend/src/components`**: Reusable UI components
-  - `button`: Custom button component
-  - `container`: Page container
-  - `tabs`: Navigation tabs
-  - `user-card`: User display component
+- **`apps/frontend/src/components`**: Reusable UI components
+  - `ui/`: UI component library (button, skeleton, tabs)
+  - `user-card.component.tsx`: User display component
+  - `typing-indicator.component.tsx`: Typing indicator component
