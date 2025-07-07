@@ -1,1 +1,1 @@
-export { appRouter, AppRouter, expressMiddleware } from './routers';
+export { appRouter, type AppRouter, expressMiddleware } from './routers';

@@ -5,6 +5,9 @@
 ## 📋 Prerequisites
 
 - Node.js (24)
+  - [fnm](https://github.com/Schniz/fnm)
+  - [nvm](https://github.com/nvm-sh/nvm)
+  - [direct](https://nodejs.org/en/download)
 - pnpm (v10) - [Install pnpm](https://pnpm.io/installation)
 
 ## 🚀 Getting Started
@@ -16,14 +19,14 @@
    cd muzz-tech-test
    ```
 
-2. **Install dependencies**
+1. **Install dependencies**
 
    ```bash
    # Install all dependencies using pnpm
    pnpm install
    ```
 
-3. **Start the development servers**
+1. **Start the development servers**
    ```bash
    # Start all development servers using Turbo
    turbo dev

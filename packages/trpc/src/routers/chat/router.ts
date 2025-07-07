@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 import { publicProcedure, router } from '../trpc';
 import { seedChat } from './seed';
 import { eventService, EventTypes } from './event-service';
-import { Message } from './schema';
+import { type Message } from './schema';
 
 const db = new Map<string, Message[]>();
 
