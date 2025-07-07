@@ -62,3 +62,4 @@ Changes I would make if I had more time:
 7. Vitest unit/snapshot testing
 8. CI/CD & Deployment
 9. Animation with something like [motion](https://motion.dev)
+10. Styled Error boundaries so users see a nice error page, these ErrorBoundary components will also be responsible for forwarding bugs to bugsnag/logging service
